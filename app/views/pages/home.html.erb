@@ -51,11 +51,24 @@
                                 <div class="col-md-4">
                                     <%= f.input :address, label: false, :placeholder => "Where are you now?", :input_html => {:id => "addresspicker", :class => 'form-control input-lg'} %>
                                 </div>
-                                <div class="col-md-4">
-                                    <%= f.input :time_from, label: false, :placeholder => "Time from", :input_html => {:class => 'form-control input-lg'} %>
+
+                                <div class="col-md-3" id="event-time-picker-1">
+                                    <%= f.text_field :time_from, label: false, :placeholder => "Time from", :class => 'form-control input-lg', "data-format" => "hh:mm" %>
+                                    <span class="add-on">
+                                      <i data-time-icon="fa fa-clock-o" data-date-icon="fa fa-calendar">
+                                      </i>
+                                    </span>
                                 </div>
-                                <div class="col-md-4">
-                                    <%= f.input :time_to, label: false, :placeholder => "Time till", :input_html => {:class => 'form-control input-lg'} %>
+                                <div class="col-md-3" id="event-time-picker-2">
+                                    <%= f.text_field :time_to, label: false, :placeholder => "Time till", :class => 'form-control input-lg', "data-format" => "hh:mm" %>
+                                    <span class="add-on">
+                                      <i data-time-icon="fa fa-clock-o" data-date-icon="fa fa-calendar">
+                                      </i>
+                                    </span>
+
+                                </div>
+                                <div class="col-md-2">
+
                                     <%= f.button :submit, "Go", :class => "pull-right", :input_html => {:class => 'btn btn-success btn-lg'} %>
                                 </div>
                             </div>
@@ -178,3 +191,10 @@
 
     </div>
     <!-- /Wrap -->
+
+    <script type="text/javascript">
+  $(function() {
+    $('#event-time-picker-1').datetimepicker({ pickDate: false, pickSeconds: false });
+    $('#event-time-picker-2').datetimepicker({ pickDate: false, pickSeconds: false });
+  });
+</script>
