@@ -22,17 +22,17 @@
 
                         <div class="header">
                             <ul class="nav nav-pills pull-right">
-                                <li><a href="login.html">Login</a>
+                                <li><a href="/users/sign_in">Login</a>
                                 </li>
-                                <li class="active"><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign up</a>
+                                <li class="active"><a href="/users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign up</a>
                                 </li>
 
                             </ul>
                             <h3 class="text-muted"><span class="glyphicon glyphicon-dashboard"></span> Side<span class="sec-brand">Trip</span></h3>
                         </div>
 
-                        <h1>Find your dream travel itinerary without all the hassles.</h1>
-                        <p class="subline">Over <strong>526,782</strong> Places to choose from</p>
+                        <h1>Find places to visit within your busy schedule.</h1>
+                        <p class="subline">Over <strong>15,782</strong> Places to choose from</p>
 
 
                     </div>
@@ -51,11 +51,24 @@
                                 <div class="col-md-4">
                                     <%= f.input :address, label: false, :placeholder => "Where are you now?", :input_html => {:id => "addresspicker", :class => 'form-control input-lg'} %>
                                 </div>
-                                <div class="col-md-4">
-                                    <%= f.input :time_from, label: false, :placeholder => "Time from", :input_html => {:class => 'form-control input-lg'} %>
+
+                                <div class="col-md-3" id="event-time-picker-1">
+                                    <%= f.text_field :time_from, label: false, :placeholder => "Time from", :class => 'form-control input-lg', "data-format" => "hh:mm" %>
+                                    <span class="add-on">
+                                      <i data-time-icon="fa fa-clock-o" data-date-icon="fa fa-calendar">
+                                      </i>
+                                    </span>
                                 </div>
-                                <div class="col-md-4">
-                                    <%= f.input :time_to, label: false, :placeholder => "Time till", :input_html => {:class => 'form-control input-lg'} %>
+                                <div class="col-md-3" id="event-time-picker-2">
+                                    <%= f.text_field :time_to, label: false, :placeholder => "Time till", :class => 'form-control input-lg', "data-format" => "hh:mm" %>
+                                    <span class="add-on">
+                                      <i data-time-icon="fa fa-clock-o" data-date-icon="fa fa-calendar">
+                                      </i>
+                                    </span>
+
+                                </div>
+                                <div class="col-md-2">
+
                                     <%= f.button :submit, "Go", :class => "pull-right", :input_html => {:class => 'btn btn-success btn-lg'} %>
                                 </div>
                             </div>
@@ -80,16 +93,16 @@
 
                 <div class="row">
                     <div class="col-lg-4 col-md-4 animated slideInDown">
-                        <h4> Thousands of vehicles to choose from</h4>
-                        <p>eu singulis petentium. Ea quo modus officiis, tation mucius conclusionemque an vix. Ad vix deserunt consequat quaerendum.</p>
+                        <h4> Thousands of tourist spots to choose from</h4>
+                        <p>We choose all the tourist spots you can see in the limited time that you have.</p>
                     </div>
                     <div class="col-lg-4 col-md-4 animated fadeInUpBig">
-                        <h4>Finding a car has never been easier</h4>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam.</p>
+                        <h4>Making an impromptu itinerary has never been easier</h4>
+                        <p>Your itinerary, right now.</p>
                     </div>
                     <div class="col-lg-4 col-md-4 animated slideInRight">
-                        <h4>Search for vehicles forsale in your area</h4>
-                        <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis.</p>
+                        <h4>Works worldwide</h4>
+                        <p>Works in every major city in the world. Use the same site in every city.</p>
                     </div>
                 </div>
                 <!-- /.row -->
@@ -103,78 +116,12 @@
 
 
 
-       
-
-
-        <!-- Section 3 -->
-
-        <div class="sec-features">
-            <div class="container">
-                <h2 class="text-center">Feature Rich <small>Secondary text</small></h2>
-                <hr>
-
-                <ul class="grid">
-                    <li>
-                        <div>
-                            <h5><i class="fa fa-globe"></i><a href="#">Donec ullamcorper nulla</a></h5>
-                            <p>onec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <h5><i class="fa fa-map-marker"></i> <a href="#">Nulla non metus auctor </a></h5>
-                            <p>onec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <h5><i class="fa fa-heart-o"></i> <a href="#">Donec ullamcorper nulla</a></h5>
-                            <p>onec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <h5><i class="fa fa-comments-o"></i> <a href="#">Donec ullamcorper nulla</a></h5>
-                            <p>onec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.</p>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div>
-                            <h5><i class="fa fa-thumbs-o-up"></i> <a href="#">Donec ullamcorper nulla</a></h5>
-                            <p>onec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <h5><i class="fa fa-search"></i> <a href="#">Donec ullamcorper nulla</a></h5>
-                            <p>onec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.</p>
-                        </div>
-                    </li>
-                    <li>
-
-                        <div>
-                            <h5><i class="fa fa-camera"></i> <a href="#">Donec ullamcorper nulla</a></h5>
-                            <p>onec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-
-                            <h5><i class="fa fa-cloud"></i> <a href="#">Donec ullamcorper nulla</a></h5>
-                            <p>onec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.</p>
-                        </div>
-                    </li>
-                </ul>
-
-            </div>
-        </div>
-
-        <!-- /Section 3 -->
-
-
-
-
-
     </div>
     <!-- /Wrap -->
+
+    <script type="text/javascript">
+  $(function() {
+    $('#event-time-picker-1').datetimepicker({ pickDate: false, pickSeconds: false });
+    $('#event-time-picker-2').datetimepicker({ pickDate: false, pickSeconds: false });
+  });
+</script>

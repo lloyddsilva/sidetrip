@@ -9,7 +9,7 @@
     <%= csrf_meta_tags %>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
-    <% if controller_name != "pages" %>
+    <% if !(controller_name == "pages" && action_name == "home") %>
       <header>
         <%= render 'layouts/navigation' %>
       </header>
