@@ -1,19 +1,35 @@
-<%# navigation styled for Bootstrap 3.0 %>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to 'Home', root_path, class: 'navbar-brand' %>
-    </div>
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <%= render 'layouts/navigation_links' %>
-      </ul>
-    </div>
-  </div>
-</nav>
+
+
+
+        <nav class="navbar  navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-dashboard"></span> Side<span class="sec-brand">Trip</span></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+
+                    <p class="navbar-text pull-right">Already a user? <a href="/users/sign_in" data-toggle="collapse" data-target="#login" class="navbar-link">Login</a>
+                    </p>
+
+                    <div class="btn-toolbar pull-right">
+                        <div class="btn-group"><a href="/users/sign_up" class="btn btn-success navbar-btn btn-sm"><span class="glyphicon glyphicon-user"></span> Create an account</a>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
