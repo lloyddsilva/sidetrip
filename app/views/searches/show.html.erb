@@ -3,28 +3,25 @@
     <div class="right-sec">
 
       <p id="notice"><%= notice %></p>
-      <h1>time available: <small><%= @time_available unless @time_available.blank? %></small></h1>
+      <h1>time available: <small><%= (@time_available/60) unless @time_available.blank? %> minutes</small></h1>
       <h1>Starting from: <small><%= @search.address %></small> </h1><br />
 
       <div>
-        <% @myarray.each do |stuff| %>
-          <% stuff.each do |more| %>
-            <%=more%>
-          <% end %>
-        <% end %>
+
+
 
       <ul class="media-list">
-        <% @places.each do |place| %>
+        <% @available_places.each do |place| %>
 
 
         <li class="media premium-item">
           <a class="pull-left" href="#">
-            <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="" src="http://photos.foter.com/68/new-money-movement_300x300.jpg">
+            <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="" src="<%= place.photo_url %>">
           </a>
           <div class="media-body">
             <h4>
               <%= place.name unless place.name.blank? %> 
-              <span class="label label-info">Popular!</span>
+              <span class="label label-info"><% </span>
               <% if !place.category.blank? %>
               <span class="label label-success pull-right">
                 <%= place.category %>
