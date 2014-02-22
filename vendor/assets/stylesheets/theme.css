@@ -403,7 +403,7 @@ padding: 50px 0px;
 	      position: relative;  
   z-index: 1;
 
-	background: url('../img/bg-main.jpg') repeat;/* Use a tiling background image or a full width image - if you're using full width you will need to change no-repeat center center cover  */
+	background: url('../images/bg.jpg') repeat;/* Use a tiling background image or a full width image - if you're using full width you will need to change no-repeat center center cover  */
 	background-position: center;
 	height: auto;
 	display: block;

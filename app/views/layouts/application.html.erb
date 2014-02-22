@@ -8,13 +8,16 @@
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
+  <body class="<%= controller_name %> <%= action_name %>">
+    <% if controller_name != "pages" %>
+      <header>
+        <%= render 'layouts/navigation' %>
+      </header>
+    <% end %>
     <main role="main">
        <%= render 'layouts/messages' %>
        <%= yield %>
+       <%= render 'layouts/footer' %>
     </main>
   </body>
 </html>
