@@ -1,88 +1,49 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="col-md-12">
+    <div class="right-sec">
 
-<p>
-  <strong>Address:</strong>
-  <%= @search.address %>
-</p>
+      <p id="notice"><%= notice %></p>
+      <h1>time available: <small><%= @time_available unless @time_available.blank? %></small></h1>
+      <h1>Starting from: <small><%= @search.address %></small> </h1><br />
 
-<p>
-  <strong>Time from:</strong>
-  <%= @search.time_from %>
-</p>
+      <div>
+        <% @myarray.each do |stuff| %>
+          <% stuff.each do |more| %>
+            <%=more%>
+          <% end %>
+        <% end %>
 
-<p>
-  <strong>Time to:</strong>
-  <%= @search.time_to %>
-</p>
+      <ul class="media-list">
+        <% @places.each do |place| %>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @search.latitude %>
-</p>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @search.longitude %>
-</p>
+        <li class="media premium-item">
+          <a class="pull-left" href="#">
+            <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="" src="http://photos.foter.com/68/new-money-movement_300x300.jpg">
+          </a>
+          <div class="media-body">
+            <h4>
+              <%= place.name unless place.name.blank? %> 
+              <span class="label label-info">Popular!</span>
+              <% if !place.category.blank? %>
+              <span class="label label-success pull-right">
+                <%= place.category %>
+              </span>
+              <% end %>
+            </h4>
+            <p><%= place.address unless place.address.blank? %></p>
+            <p><%= place.description unless place.description.blank? %></p>
+          </div>
+        </li>
 
-<p>
-  <strong>User:</strong>
-  <%= @search.user_id %>
-</p>
+        <% end %>
 
-<% @places.each do |place| %>
 
-  <p>
-    <strong>Name:</strong>
-    <%= place.name unless place.name.blank? %>
-  </p>
+      </ul>
 
-  <p>
-    <strong>Address:</strong>
-    <%= place.address unless place.address.blank? %>
-  </p>
-
-  <p>
-    <strong>Latitude:</strong>
-    <%= place.latitude unless place.latitude.blank? %>
-  </p>
-
-  <p>
-    <strong>Longitude:</strong>
-    <%= place.longitude unless place.longitude.blank? %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= place.description unless place.description.blank?  %>
-  </p>
-
-  <p>
-    <strong>Photo url:</strong>
-    <%= place.photo_url unless place.photo_url.blank? %>
-  </p>
-
-  <p>
-    <strong>Start time:</strong>
-    <%= place.start_time unless place.start_time.blank? %>
-  </p>
-
-  <p>
-    <strong>End time:</strong>
-    <%= place.end_time unless place.end_time.blank? %>
-  </p>
-
-  <p>
-    <strong>Category:</strong>
-    <%= place.category unless place.category.blank? %>
-  </p>
-
-  <p>
-    <strong>Visit time minutes:</strong>
-    <%= place.visit_time_minutes unless place.visit_time_minutes.blank? %>
-  </p>
-
-<% end %>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_search_path(@search) %> |
 <%= link_to 'Back', searches_path %>

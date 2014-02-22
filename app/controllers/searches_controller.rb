@@ -11,6 +11,14 @@ class SearchesController < ApplicationController
   # GET /searches/1.json
   def show
     @places = Place.near(@search.address, 10)
+    @time_available = @search.time_to - @search.time_from
+    @myarray = []
+    @places.each do |place|
+      @str = 'http://maps.googleapis.com/maps/api/distancematrix/json?origins=singapore+570162&destinations='+place.address+'&mode=walking&language=en-EN&sensor=false'
+      @uri = URI(@str.gsub!(/\s/,'+'))
+      @comparison = JSON.parse Net::HTTP.get(@uri)
+      @myarray.push(@comparison["rows"])
+    end
   end
 
   # GET /searches/new
