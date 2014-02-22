@@ -2,6 +2,7 @@ Sidetrip::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   resources :places
 
+  get "pages/search"
   get "pages/home"
   get "pages/about"
   get "pages/contact"
