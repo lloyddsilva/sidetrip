@@ -11,7 +11,7 @@
 
 
       <ul class="media-list">
-        <% @available_places.each do |place| %>
+        <% @places.each do |place| %>
 
 
         <li class="media premium-item">
@@ -21,7 +21,7 @@
           <div class="media-body">
             <h4>
               <%= place.name unless place.name.blank? %> 
-              <span class="label label-info"><% </span>
+              <span class="label label-info"><%= place.visit_time_minutes unless place.visit_time_minutes.blank? %></span>
               <% if !place.category.blank? %>
               <span class="label label-success pull-right">
                 <%= place.category %>
